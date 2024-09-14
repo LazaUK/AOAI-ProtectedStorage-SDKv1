@@ -1,4 +1,4 @@
-# Feedaing Azure OpenAI models with files, hosted in non-public Azure Storage account's containers.
+# Azure OpenAI: How to process files, hosted in non-public Azure Storage accounts.
 
 By default, blobs and containers on Azure Storage account are not accessible for anonymous calls. In this repo, I explain how to authenticate with Azure Storage account, download target blob (Microsoft logo), convert it into Base64 format and then feed to Azure OpenAI model for a further processing.
 
