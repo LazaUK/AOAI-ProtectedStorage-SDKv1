@@ -27,7 +27,7 @@ pip install --upgrade openai
 - ```STORAGE_BLOB```: Name of the image blob.
 
 ## Step 1: Authenticating with Azure Storage account
-This step describes how to authenticate with your Azure Storage account in Python. For specifics of the process, please refer to the following Azure Storage [docuemntation page](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-python-get-started).
+This step describes how to authenticate with your Azure Storage account in Python. For specifics of the process, please refer to the following Azure Storage [documentation page](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-python-get-started).
 
 We'll use the Default Azure Credentials which can leverage available credentials, e.g. from the Azure CLI environment or assigned Managed Identity (if running on an Azure resource):
 ``` Python
