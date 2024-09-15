@@ -6,7 +6,7 @@ By default, blobs and containers on Azure Storage account are not accessible by 
 - [Pre-requisites](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#pre-requisites)
 - [Step 1: Authenticating with Azure Storage account](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#step-1-authenticating-with-azure-storage-account)
 - [Step 2: Downloading hosted image and convert it into Base64](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#step-2-downloading-hosted-image-and-convert-it-into-base64)
-- [Step 3: Processing image by Azure OpenAI model, e.g. GPT-4o]()
+- [Step 3: Processing image by Azure OpenAI model, e.g. GPT-4o](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#step-3-processing-image-by-azure-openai-model-eg-gpt-4o)
 
 ## Pre-requisites
 1. To build this demo, I used the latest version of OpenAI Python SDK - v1.x. To upgrade your _openai_ Python package, please use the following pip command:
