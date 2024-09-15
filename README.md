@@ -15,13 +15,13 @@ This repo explains how to authenticate with an Azure Storage account, download a
 ```
 pip install --upgrade openai
 ```
-2. For API key authentication, set the following environment variables:
+2. For Azure OpenAI's _API key authentication_, set the following environment variables:
 - ```AZURE_OPENAI_API_BASE```: Azure OpenAI API endpoint base URL,
 - ```AZURE_OPENAI_API_VERSION```: Azure OpenAI API version,
 - ```AZURE_OPENAI_API_KEY```: Your Azure OpenAI API key,
 - ```AZURE_OPENAI_API_DEPLOY```: Deployment name of your Azure OpenAI model.
->**Note**: If you prefer Entra ID (formerly Azure Active Directory) authentication, you can find implementation options [here](https://github.com/LazaUK/AOAI-EntraIDAuth-SDKv1).
-3. Details of the target image can be defined through the following environment variables:
+>**Note**: If you prefer _Entra ID (formerly Azure Active Directory) authentication_, you can find implementation options [here](https://github.com/LazaUK/AOAI-EntraIDAuth-SDKv1).
+3. Details of the source image can be defined through the following environment variables:
 - ```STORAGE_URL```: URL of your Azure Storage account,
 - ```STORAGE_CONTAINER```: Name of the container containing the image,
 - ```STORAGE_BLOB```: Name of the image blob.
