@@ -29,7 +29,7 @@ pip install --upgrade openai
 ## Step 1: Authenticating with Azure Storage account
 This step describes how to authenticate with your Azure Storage account in Python. For specifics of the process, please refer to the following Azure Storage [documentation page](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-python-get-started).
 
-We'll use the Default Azure Credentials which can leverage available credentials, e.g. from the Azure CLI environment or assigned Managed Identity (if running on an Azure resource):
+We'll use the _DefaultAzureCredential_ class which can leverage available credentials, e.g. from the Azure CLI environment or assigned Managed Identity (if running on an Azure resource):
 ``` Python
 def get_blob_service_client(storage_url):
     print(f"Step 1 - Authenticating with Azure Blob Storage: {storage_url}.")
