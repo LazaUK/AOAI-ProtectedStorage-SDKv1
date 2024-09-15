@@ -5,7 +5,7 @@ By default, blobs and containers on Azure Storage account are not accessible by 
 ## Table of contents:
 - [Pre-requisites](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#pre-requisites)
 - [Step 1: Authenticating with Azure Storage account](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#step-1-authenticating-with-azure-storage-account)
-- [Step 2: Downloading hosted image and convert it into Base64]()
+- [Step 2: Downloading hosted image and convert it into Base64](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#step-2-downloading-hosted-image-and-convert-it-into-base64)
 - [Step 3: Processing image by Azure OpenAI model, e.g. GPT-4o]()
 
 ## Pre-requisites
@@ -52,3 +52,44 @@ def get_blob_to_base64(blob_service_client: BlobServiceClient, container_name, b
 ```
 
 ## Step 3: Processing image by Azure OpenAI model, e.g. GPT-4o
+1. The last step in our exercise is to process the image by Azure OpenAI model. We'll create one more Helper function to initiate Azure OpenAI client and feed it with downloaded image in Base64 format:
+``` Python
+def analyse_blob(base64_image):
+    print(f"Step 3 - Analysing image using Azure OpenAI.")
+
+    client = AzureOpenAI(
+        azure_endpoint = AOAI_API_BASE,
+        api_key = AOAI_API_KEY,
+        api_version = AOAI_API_VERSION
+    )
+
+    response = client.chat.completions.create(
+        model = AOAI_DEPLOYMENT,
+        messages = [
+            {"role": "system", "content": "You are a useful image analyser."},
+            {"role": "user", "content": [  
+                { 
+                    "type": "text", 
+                    "text": "Please, describe the image." 
+                },
+                { 
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/jpeg;base64,{base64_image}"
+                    }
+                }
+            ]} 
+        ]
+    )
+    print("--------------------")
+    print(f"Results: {response.choices[0].message.content}")
+    return response
+```
+2. Executing all 3 steps in a sequence should produce an outcome similar to this:
+``` JSON
+Step 1 - Authenticating with Azure Blob Storage: https://lazizaoaistorage.blob.core.windows.net.
+Step 2 - Downloading blob: mslogo.png.
+Step 3 - Analysing image using Azure OpenAI.
+--------------------
+Results: The image features a simple grid composed of four colored squares. The top left square is orange, the top right square is green, the bottom left square is blue, and the bottom right square is yellow. The squares are arranged in a 2x2 format.
+```
