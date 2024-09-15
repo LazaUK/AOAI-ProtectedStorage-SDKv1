@@ -7,7 +7,7 @@ This repo explains how to authenticate with an Azure Storage account, download a
 ## Table of contents:
 - [Pre-requisites](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#pre-requisites)
 - [Step 1: Authenticating with Azure Storage account](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#step-1-authenticating-with-azure-storage-account)
-- [Step 2: Downloading hosted image and converting it into Base64](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#step-2-downloading-hosted-image-and-converting-it-into-base64)
+- [Step 2: Downloading source image and converting it into Base64](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#step-2-downloading-source-image-and-converting-it-into-base64)
 - [Step 3: Processing image by Azure OpenAI model, e.g. GPT-4o](https://github.com/LazaUK/AOAI-ProtectedStorage-SDKv1#step-3-processing-image-by-azure-openai-model-eg-gpt-4o)
 
 ## Pre-requisites
@@ -27,7 +27,7 @@ pip install --upgrade openai
 - ```STORAGE_BLOB```: Name of the image blob.
 
 ## Step 1: Authenticating with Azure Storage account
-This step describes how to authenticate with your Azure Storage account in Python. For specifics of the process, please refer to the following Azure Storage [documentation page](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-python-get-started).
+This step demonstrates how to authenticate with your Azure Storage account in Python. For specifics of the process, please refer to the following Azure Storage [documentation page](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-python-get-started).
 
 We'll use the _DefaultAzureCredential_ class which can leverage available credentials, e.g. from the Azure CLI environment or assigned Managed Identity (if running on an Azure resource):
 ``` Python
@@ -42,7 +42,7 @@ def get_blob_service_client(storage_url):
     return blob_service_client
 ```
 
-## Step 2: Downloading hosted image and converting it into Base64
+## Step 2: Downloading source image and converting it into Base64
 Here, we'll download the target blob and convert it to Base64 format, which Azure OpenAI models like GPT-4o can process natively.:
 ``` Python
 def get_blob_to_base64(blob_service_client: BlobServiceClient, container_name, blob_name):
