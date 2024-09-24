@@ -1,4 +1,4 @@
-# Azure OpenAI: How to process files hosted in non-public Azure Storage accounts
+# Retrieval-Augmented Generation (RAG) with Azure OpenAI and Azure AI Search
 
 > **Note:** Data file used in this demo was borrowed from [Microsoft's Azure OpenAI + Azure AI Search open-source solution](https://github.com/Azure-Samples/azure-search-openai-demo)
 
