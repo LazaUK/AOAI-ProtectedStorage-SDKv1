@@ -94,7 +94,7 @@ def analyse_blob(base64_image):
     return response
 ```
 
-Executing all 3 steps in a sequence should produce an output similar to this:
+Executing all 3 steps above in a sequence should produce an output similar to this:
 ``` JSON
 Step 1 - Authenticating with Azure Blob Storage: https://lazizaoaistorage.blob.core.windows.net.
 Step 2 - Downloading blob: mslogo.png.
